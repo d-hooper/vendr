@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js"
 
 
 export class FoodItem {
@@ -20,11 +21,19 @@ export class FoodItem {
             <span>$${this.price.toFixed(2)}</span>
           </div>
           <div>
-            <button onclick="app.walletController.requestWalletUpdate(${this.price * -1})" class="btn btn-warning fw-bold text-light text-shadow" role="button" title="Click to buy a ${this.name}">Buy</button>
+            <button onclick="app.walletController.requestWalletUpdate(${this.price * -1})" ${this.applyDisabled} class="btn btn-warning fw-bold text-light text-shadow" role="button" title="Click to buy a ${this.name}">Buy</button>
           </div>
         </div>
       </div>
     </div>
     `
+  }
+
+  get applyDisabled() {
+    const wallet = AppState.wallet
+    if (this.price > wallet) {
+      return 'disabled'
+    }
+    return ''
   }
 }

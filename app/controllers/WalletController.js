@@ -11,7 +11,6 @@ constructor() {
 }
 
 requestWalletUpdate(amount) {
-  console.log(amount);
   walletService.changeWalletAmount(amount)
 }
 
