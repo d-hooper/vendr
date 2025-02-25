@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js"
 
 
 export class FoodItemsController {
@@ -7,7 +8,10 @@ export class FoodItemsController {
   }
 
   drawFoodItems() {
-    console.log('Draw something to eat');
-    
+  let foodItemsContent = ''
+  const foodItems = AppState.foodItems
+  const foodItemsSectionElem = document.getElementById('foodItemsSection')
+  foodItems.forEach(foodItem => foodItemsContent += foodItem.itemCardHTMLTemplate)
+  foodItemsSectionElem.innerHTML += foodItemsContent
   }
 }
