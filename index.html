@@ -24,7 +24,7 @@
         <div class="ms-auto" id="authstate"></div>
       </div>
       <div>
-        <button class="btn btn-danger fw-bold text-shadow">Add $0.25 to Your Wallet</button>
+        <button onclick="app.walletController.requestWalletUpdate(0.25)" class="btn btn-danger fw-bold text-shadow">Add $0.25 to Your Wallet</button>
       </div>
     </nav>
   </header>
@@ -55,7 +55,7 @@
               <p class="text-uppercase mb-0">Total Money</p>
             </div>
             <div>
-              <span id="walletValue">$0.00</span>
+              <span id="wallet">$0.00</span>
             </div>
           </div>
         </div>

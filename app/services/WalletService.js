@@ -2,15 +2,16 @@ import { AppState } from "../AppState.js";
 
 class WalletService {
   
-
-  constructor() {
-
-  }
-
-  changeWalletAmount() {
+  changeWalletAmount(amount) {
     console.log('Update wallet amount');
-    AppState.wallet += 0.25
-    console.log(AppState.wallet);
+    const wallet = AppState.wallet
+    if (amount < 0) {
+      if (wallet < (amount * -1)) {
+        window.alert('You do not have enough money for that!')
+        return
+      }
+    }
+    AppState.wallet += amount
   }
 
 }
