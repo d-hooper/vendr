@@ -15,12 +15,17 @@
 <body data-bs-theme="light">
   <!-- SECTION -->
   <header>
-    <nav class="navbar bg-codeworks text-light gap-2 px-2">
-      <img src="./assets/img/logo.png" height="45" alt="" loading="lazy">
-      <div>
-        <b>Vendr</b>
+    <nav class="navbar bg-codeworks text-light gap-2 px-3 d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <span class="fs-1 mdi mdi-slot-machine"></span>
+        <div class="fs-2 px-2">
+          <b>Vendr</b>
+        </div>
+        <div class="ms-auto" id="authstate"></div>
       </div>
-      <div class="ms-auto" id="authstate"></div>
+      <div>
+        <button class="btn btn-danger fw-bold text-shadow">Add $0.25 to Your Wallet</button>
+      </div>
     </nav>
   </header>
 
@@ -41,10 +46,27 @@
 
   </main>
 
-  <footer class="text-bg-dark">
-    <div class="text-center">
+  <footer>
+    <section class="container-fluid px-0">
+      <div class="row justify-content-end align-items-end">
+        <div class="col-4">
+          <div class="d-flex align-items-center justify-content-between bg-danger text-light text-shadow fs-2 p-2">
+            <div>
+              <p class="text-uppercase mb-0">Total Money</p>
+            </div>
+            <div>
+              <span>$0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+    <div class="text-center text-bg-dark">
       <p class="mb-0"><small>Made with <i class="mdi mdi-heart text-pink"></i> by CodeWorks</small></p>
     </div>
+
   </footer>
 
   <!-- SECTION links for bootstrap, axios, and auth -->
